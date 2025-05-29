@@ -4,19 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lista de Tarefas Profissional</title>
-    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Lista de Tarefas</h1>
+            <!-- Botão para voltar para a página inicial -->
+            <a href="home.html" class="btn voltar">Voltar para Página Inicial</a>
         </header>
 
         <main>
             <section class="task-input">
                 <form id="form-tarefa">
-                    <input type="text" id="nova-tarefa" placeholder="Adicione uma nova tarefa..." required />
+                    <input
+                        type="text"
+                        id="nova-tarefa"
+                        placeholder="Adicione uma nova tarefa..."
+                        required
+                    />
                     <button type="submit">Adicionar</button>
                 </form>
             </section>
@@ -26,8 +32,6 @@
                     <!-- Tarefas serão adicionadas aqui -->
                 </ul>
             </section>
-
-            <a href="index.html" class="btn voltar">Voltar para a Tela Inicial</a>
         </main>
     </div>
 
@@ -36,7 +40,6 @@
         const lista = document.getElementById('lista-tarefas');
         const input = document.getElementById('nova-tarefa');
 
-        // Carrega tarefas salvas ao abrir a página
         document.addEventListener('DOMContentLoaded', carregarTarefasSalvas);
 
         form.addEventListener('submit', function(event) {
@@ -53,18 +56,16 @@
             const li = document.createElement('li');
             li.textContent = texto;
 
-            // Marcar como concluída com clique
             li.onclick = () => {
                 li.classList.toggle('concluida');
                 salvarTarefas();
             };
 
-            // Botão remover
             const btnRemover = document.createElement('button');
             btnRemover.textContent = 'Remover';
             btnRemover.className = 'btn-remover';
             btnRemover.onclick = (e) => {
-                e.stopPropagation(); // Evita marcar como concluída ao remover
+                e.stopPropagation();
                 li.remove();
                 salvarTarefas();
             };
@@ -79,7 +80,7 @@
             lista.querySelectorAll('li').forEach(li => {
                 tarefas.push({
                     texto: li.firstChild.textContent,
-                    concluida: li.classList.contains('concluida')
+                    concluida: li.classList.contains('concluida'),
                 });
             });
             localStorage.setItem('tarefas', JSON.stringify(tarefas));
