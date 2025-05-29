@@ -1,0 +1,110 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f0fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(108, 74, 183, 0.1);
+    border-top: 5px solid #6c4ab7;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #6c4ab7;
+}
+
+/* Formulário de entrada */
+.task-input form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-input input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d3c4f1;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fefeff;
+}
+
+.task-input input[type="text"]:focus {
+    border-color: #6c4ab7;
+    outline: none;
+}
+
+/* Botão de adicionar */
+.task-input button {
+    padding: 12px 20px;
+    background-color: #6c4ab7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-input button:hover {
+    background-color: #5939a5;
+}
+
+/* Lista de tarefas */
+.task-list ul {
+    list-style: none;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    background-color: #f8f5ff;
+    border: 1px solid #e0d9f2;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.task-list li:hover {
+    background-color: #f0ebff;
+}
+
+/* Botão de remover */
+.btn-remover {
+    background-color: #b452a6;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-remover:hover {
+    background-color: #992f8a;
+}
