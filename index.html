@@ -1,95 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lista de Tarefas Profissional</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Inicial</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6c4ab7, #bda7f0);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 60px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #9e7ade;
+    }
+    a {
+      display: inline-block;
+      padding: 14px 30px;
+      background-color: #6c4ab7;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(108, 74, 183, 0.6);
+      transition: background-color 0.3s ease;
+    }
+    a:hover {
+      background-color: #5939a5;
+      box-shadow: 0 6px 20px rgba(89, 57, 165, 0.8);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Lista de Tarefas</h1>
-            <!-- Botão para voltar para a página inicial -->
-            <a href="home.html" class="btn voltar">Voltar para Página Inicial</a>
-        </header>
-
-        <main>
-            <section class="task-input">
-                <form id="form-tarefa">
-                    <input
-                        type="text"
-                        id="nova-tarefa"
-                        placeholder="Adicione uma nova tarefa..."
-                        required
-                    />
-                    <button type="submit">Adicionar</button>
-                </form>
-            </section>
-
-            <section class="task-list">
-                <ul id="lista-tarefas">
-                    <!-- Tarefas serão adicionadas aqui -->
-                </ul>
-            </section>
-        </main>
-    </div>
-
-    <script>
-        const form = document.getElementById('form-tarefa');
-        const lista = document.getElementById('lista-tarefas');
-        const input = document.getElementById('nova-tarefa');
-
-        document.addEventListener('DOMContentLoaded', carregarTarefasSalvas);
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const texto = input.value.trim();
-            if (texto !== '') {
-                adicionarTarefa(texto);
-                salvarTarefas();
-                input.value = '';
-            }
-        });
-
-        function adicionarTarefa(texto, concluida = false) {
-            const li = document.createElement('li');
-            li.textContent = texto;
-
-            li.onclick = () => {
-                li.classList.toggle('concluida');
-                salvarTarefas();
-            };
-
-            const btnRemover = document.createElement('button');
-            btnRemover.textContent = 'Remover';
-            btnRemover.className = 'btn-remover';
-            btnRemover.onclick = (e) => {
-                e.stopPropagation();
-                li.remove();
-                salvarTarefas();
-            };
-
-            li.appendChild(btnRemover);
-            if (concluida) li.classList.add('concluida');
-            lista.appendChild(li);
-        }
-
-        function salvarTarefas() {
-            const tarefas = [];
-            lista.querySelectorAll('li').forEach(li => {
-                tarefas.push({
-                    texto: li.firstChild.textContent,
-                    concluida: li.classList.contains('concluida'),
-                });
-            });
-            localStorage.setItem('tarefas', JSON.stringify(tarefas));
-        }
-
-        function carregarTarefasSalvas() {
-            const tarefasSalvas = JSON.parse(localStorage.getItem('tarefas')) || [];
-            tarefasSalvas.forEach(tarefa => adicionarTarefa(tarefa.texto, tarefa.concluida));
-        }
-    </script>
+  <div class="container">
+    <h1>Bem-vindo(a)!</h1>
+    <p>Esta é a página inicial do seu app.</p>
+    <a href="index.html">Ir para Lista de Tarefas</a>
+  </div>
 </body>
 </html>
