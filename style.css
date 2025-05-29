@@ -163,9 +163,25 @@ li.concluida {
     background-color: #5939a5;
 }
 
+/* Botão Voltar para a Tela Inicial */
 .btn.voltar {
-    margin-top: 10px;
+    margin-top: 20px;
+    background-color: #a078d9;
+    padding: 12px 24px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(160, 120, 217, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
+    text-align: center;
+}
+
+.btn.voltar:hover {
+    background-color: #7a56b5;
+    transform: translateY(-2px);
 }
 
 /* Responsivo */
