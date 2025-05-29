@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Lista de Tarefas Profissional</title>
-    <link rel="stylesheet" href="estilo.css">
+
+    <!-- Ligação com o CSS -->
+    <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
     <div class="container">
@@ -15,19 +17,25 @@
         <main>
             <section class="task-input">
                 <form id="form-tarefa">
-                    <input type="text" id="nova-tarefa" placeholder="Adicione uma nova tarefa..." required>
+                    <input
+                        type="text"
+                        id="nova-tarefa"
+                        placeholder="Adicione uma nova tarefa..."
+                        required
+                    />
                     <button type="submit">Adicionar</button>
                 </form>
             </section>
 
             <section class="task-list">
                 <ul id="lista-tarefas">
-                    <!-- Tarefas serão adicionadas aqui -->
+                    <!-- Tarefas adicionadas aparecerão aqui -->
                 </ul>
             </section>
         </main>
     </div>
 
+    <!-- Script JavaScript embutido -->
     <script>
         const form = document.getElementById('form-tarefa');
         const lista = document.getElementById('lista-tarefas');
