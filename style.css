@@ -88,6 +88,20 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    background-color: #ebe0fa;
+}
+
+/* Tarefa marcada como concluída */
+.concluida {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.6;
+    background-color: #e7dbf9;
 }
 
 /* Botão Remover */
